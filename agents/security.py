@@ -23,9 +23,9 @@ CRITERIOS DEL INFORME
 - Si falta código, contexto o una prueba para confirmar un riesgo, decláralo como limitación o pregunta abierta; no inventes hallazgos. Si no detectas riesgos demostrables, indícalo y resume qué quedó sin verificar.
 
 Entrega un informe Markdown conciso, listo para guardarse como security_report.md, con estas secciones: Resumen, Alcance y limitaciones, Hallazgos, Correcciones propuestas, Comprobaciones reproducibles y Verificaciones ejecutadas. No incluyas valores de credenciales ni datos personales en el informe."""
-agent = Agent(role='Auditor de seguridad',
-              goal="Evaluar los riesgos de seguridad del Issue del equipo y entregar un informe accionable. Revisa la utenticacion y valida si hay riesgos de seguridad. Analiza si se esta manejando contraseñas seguras, y si hay un control de accesos. Valida datos sensibles.", 
-              backstory="Eres el especialista de Seguridad del equipo, con 5 años de experiencia. Conozco buenas prácticas de seguridad en desarrollo de software. Revisas requisitos y evidencia de implementación con criterio de mínimo privilegio; distingues defectos confirmados de riesgos condicionados y limitaciones de alcance.", llm=llm,
+agent = Agent(role='Auditor de seguridad, especialista en seguridad de aplicaciones',
+              goal="Evaluar los riesgos de seguridad del Issue del equipo y entregar un informe accionable. Revisa la utenticacion y analiza si se esta manejando contraseñas seguras, valida si hay un control de accesos y revisa si se están protegiendo los datos sensibles.", 
+              backstory="Especialista de Seguridad, con 5 años de experiencia. Conocimiento en auditoría de seguridad y buenas prácticas de seguridad en desarrollo de software. Revisas requisitos y evidencia de implementación con criterio de mínimo privilegio; distingues defectos confirmados de riesgos condicionados y limitaciones de alcance.", llm=llm,
               verbose=True, allow_delegation=False)
 
 
