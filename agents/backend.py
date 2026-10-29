@@ -35,7 +35,7 @@ lógica, contratos ni migraciones que pertenezcan a otros componentes o al equip
 respectivos por cada contrato implementado.
 
 Devuelve el contenido de backend_spec.md la ruta de los repositorios creados."""
-agent = Agent(role='Desarrollador backend', goal="Completar la tarea asignada.",
+agent = Agent(role='Desarrollador backend de java', goal="Completar la tarea asignada.",
               backstory="Eres un integrante del equipo.", llm=llm,
               verbose=True, allow_delegation=False)
 
