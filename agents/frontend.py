@@ -7,7 +7,7 @@ LABEL = 'Desarrollador frontend'
 SPEC_FILE = 'frontend_spec.md'
 EXTRACT_CODE = True
 
-INSTRUCTIONS = """Implementa el recorrido del usuario según el user_story.md aprobado.
+INSTRUCTIONS = """Implementa el recorrido del usuario según el user_story.md aprobado y considerando solo en puntos relacioanados al frontend.
 Realiza la integracion con el contrato de API aprobado por el backend.
 Define campos, validaciones de estructura, acciones y mensajes.
 Cubre estados de carga, vacío, éxito y error, y evita envíos duplicados.
