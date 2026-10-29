@@ -6,7 +6,7 @@ from crew.llm_config import llm
 
 KEY = 'security'
 LABEL = 'Revisor de seguridad'
-SPEC_FILE = 'security-file.md'
+SPEC_FILE = 'security_report.md'
 EXTRACT_CODE = False
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,14 +42,13 @@ acceso a GitHub MCP, evidencia o capacidad para ejecutar una prueba recomendada,
 constancia explícita de la limitación. No presentes una revisión incompleta como un
 resultado sin vulnerabilidades.
 
-Produce security-file.md en español como tabla Markdown con estas cuatro columnas y
+Produce security_report.md en output/specs/ en español como tabla Markdown con estas cuatro columnas y
 este orden exacto: hallazgo | criticidad | repositorio donde se halló la vulnerabilidad | fuente.
 Usa criticidad Crítica, Alta, Media o Baja para vulnerabilidades confirmadas. Incluye
 identificadores OWASP/CWE/CVE y evidencia en el hallazgo cuando corresponda. Si no se
-identifican vulnerabilidades, deja la tabla sin filas de hallazgos. Al final agrega el
-estado y una razón breve: CONFORME solo si se inspeccionaron ambos repositorios,
-dependencias y pruebas recomendadas sin confirmar vulnerabilidades; NO CONFORME si se
-confirma al menos una vulnerabilidad o si la revisión/pruebas quedan incompletas.
+identifican vulnerabilidades en una revisión completa, deja la tabla sin filas de
+hallazgos y escribe CONFORME. Escribe NO CONFORME si se confirma al menos una
+vulnerabilidad o si la revisión/pruebas quedan incompletas; agrega una razón breve.
 """
 agent = Agent(role='Especialista en seguridad bancaria',
               goal="Detectar y documentar vulnerabilidades verificables en los repositorios bancarios backend y frontend.",
@@ -75,7 +74,7 @@ def build_task(feature: dict) -> Task:
                 + "\n" + str(feature.get("acceptance_criteria", []))
                 + "\n\nEntradas para identificar repositorios y pruebas:\n"
                 + "".join(repository_context),
-                expected_output='Informe security-file.md en español con la tabla solicitada, '
+                expected_output='Informe output/specs/security_report.md en español con la tabla solicitada, '
                                 'hallazgos basados en evidencia y limitaciones explícitas. '
                                 'No modificar los repositorios revisados.',
                 agent=agent)
