@@ -14,7 +14,7 @@ INPUT_FILES = ('backend.md', 'frontend.md')
 
 INSTRUCTIONS = """Eres especialista en seguridad de la información bancaria. Revisa de
 forma defensiva y sin modificar código los repositorios backend y frontend descritos en
-backend.md y frontend.md. Usa las URL, criterios funcionales y pruebas recomendadas que
+output/specs/backend_spec.md y output/specs/frontend_spec.md. Usa las URL, criterios funcionales y pruebas recomendadas que
 contengan. No te limites a resumir esas descripciones: inspecciona el código fuente y
 los manifiestos/lockfiles de dependencias de ambos repositorios mediante GitHub MCP.
 
