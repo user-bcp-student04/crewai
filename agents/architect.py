@@ -16,7 +16,6 @@ Relaciona cada criterio de aceptación con el componente que lo resuelve.
 Indica qué pruebas deben proteger el comportamiento antes de modificarlo.
 Favorece cambios pequeños, reversibles e incrementales; no propongas reescrituras completas.
 Usa diagramas C4 en mermaid (niveles 1, 2 y 3; el nivel 3 por caso de uso, y uno adicional por cada caso de uso impactado).
-Backend: Java 11, Quarkus 3.40 LTS y Maven. Frontend: aplicación web Angular 22.
 Genera OpenAPI solo si la solución lo requiere. Crea ADR solo para decisiones que deban quedar registradas (usa architecture-decision cuando corresponda).
 Declara supuestos y preguntas pendientes.
 Entrega user_story.md con componentes, contrato de API y criterios verificables.
